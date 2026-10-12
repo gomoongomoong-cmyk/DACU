@@ -547,7 +547,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
 </div>
 <script>
 (function(){
-  var r=document.querySelector('.dtl'); if(!r) return;
+  var r=[].filter.call(document.querySelectorAll('.dtl'),function(x){return !x.classList.contains('js')&&!x.classList.contains('is-static');}).pop(); if(!r) return;   // 상세설명 영역이 여러 개(PC·모바일)일 때 아직 처리 안 된 것만
   var still=/[?&]static/.test(location.search)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)||!('IntersectionObserver' in window);
   if(still){ r.classList.add('is-static'); return; }   // 주소 뒤 ?static → 모션 없이
   r.classList.add('js');
