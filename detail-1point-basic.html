@@ -113,6 +113,13 @@ html body .dtl .cmp .hd.p{background:var(--brown);color:#fff;border-radius:6px 6
 html body .dtl .cmp .last{border-bottom:0}
 html body .dtl .cmp .last.p{border-radius:0 0 6px 6px}
 
+/* BASIC vs PLUS 표 */
+html body .dtl .cmp.vs{grid-template-columns:62px 1fr 1fr}
+html body .dtl .cmp.vs>div{font-size:13px;line-height:1.5;padding:15px 5px}
+html body .dtl .cmp.vs .k{font-size:12px}
+html body .dtl .cmp.vs .hd{flex-direction:column;gap:8px;font-size:12.5px;letter-spacing:.02em;padding:16px 4px 14px}
+html body .dtl .cmp.vs .ic{display:flex;height:40px;align-items:center}
+
 /* 체크 목록 카드 */
 html body .dtl .cl{display:grid;gap:8px;text-align:left}
 html body .dtl .cl li{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--card);border-radius:6px;box-shadow:0 3px 10px rgba(74,54,40,.05);font-size:14.5px}
@@ -265,6 +272,22 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>국산 친환경 소재</span>
       </div>
     </div>
+  </section>
+
+  <!-- BASIC VS PLUS -->
+  <section class="sec b2">
+    <div class="bar"><span>LINE COMPARE</span><span>DACU TurnPad 1-POINT BASIC</span></div>
+    <p class="kick">BASIC VS PLUS</p>
+    <h2 class="t">같은 1-POINT,<br><b>무엇이 다를까요?</b></h2>
+    <p class="d">BASIC은 상판과 공용 하판으로 된<br><b>가볍고 심플한 2단 구조</b>입니다.</p>
+    <div class="card gap"><div class="cmp vs">
+      <div class="hd"></div><div class="hd l"><span class="ic"><svg viewBox="0 0 64 44" width="56" height="40" aria-hidden="true"><ellipse cx="32" cy="8" rx="24" ry="7" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="22" rx="14" ry="5" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="36" rx="24" ry="7" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="36" rx="14" ry="4" fill="#FFFFFF" stroke="#D8CEC5"/></svg></span>1-POINT PLUS</div><div class="hd p"><span class="ic"><svg viewBox="0 0 64 44" width="56" height="40" aria-hidden="true"><ellipse cx="32" cy="12" rx="26" ry="9" fill="#FFFFFF" stroke="#4A3628"/><ellipse cx="32" cy="34" rx="21" ry="8" fill="#FFFFFF" stroke="#4A3628"/><ellipse cx="32" cy="34" rx="13" ry="4.5" fill="#4A3628" stroke="#4A3628"/></svg></span>1-POINT BASIC</div>
+      <div class="k">구조</div><div class="l">3단<br>상판 + 중앙판 + 하판</div><div class="p">2단<br>상판 + 공용 하판</div>
+      <div class="k">상판 형태</div><div class="l">원형</div><div class="p">원형 · 스퀘어</div>
+      <div class="k">사이즈</div><div class="l">23cm</div><div class="p">24cm · 27cm</div>
+      <div class="k">회전감</div><div class="l">3가지 중 선택<br>부드러운 정도를<br>고를 수 있어요</div><div class="p">한 가지</div>
+      <div class="k last">추천</div><div class="l last">BASIC보다 안정감이<br>필요한 제품</div><div class="p last">일반 모니터 등<br>단일 지지점 제품</div>
+    </div></div>
   </section>
 
   <!-- OPTION -->
