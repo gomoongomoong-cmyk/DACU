@@ -21,7 +21,7 @@ html body .dtl .sec.b2{background:var(--bg2)}
 html body .dtl .sec.grad{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg1) 100%)}
 html body .dtl .bar{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;margin-bottom:44px;border-bottom:1px solid rgba(74,54,40,.14);font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--brown)}
 html body .dtl .bar span:first-child::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--brown);margin-right:7px;vertical-align:middle;position:relative;top:-1px}
-html body .dtl .bar span:last-child{font-weight:500;color:var(--sub)}
+html body .dtl .bar span:last-child{font-weight:500;color:var(--sub);white-space:nowrap}
 html body .dtl .kick{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:12px;letter-spacing:0}
 html body .dtl .t{font-size:31px;line-height:1.36;font-weight:300;color:var(--text);margin-bottom:16px}
 html body .dtl .t b{font-weight:700}
@@ -44,7 +44,8 @@ html body .dtl .hero{position:relative;background:var(--bg1)}
 html body .dtl .hero .photo{aspect-ratio:4/5}
 html body .dtl .hero .photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,rgba(244,239,232,0) 0%,var(--bg1) 100%)}
 html body .dtl .hero .copy{position:relative;margin-top:-70px;padding:0 24px 56px}
-html body .dtl .feat .im.g{width:136px;aspect-ratio:1/1;align-self:center;justify-self:center;margin:12px auto;border-radius:6px}
+html body .dtl .feat .im.g{width:136px;aspect-ratio:1/1;align-self:center;justify-self:center;margin:14px 16px;border-radius:6px}
+html body .dtl .feat:nth-child(even){grid-template-columns:1fr auto}
 html body .dtl .hero .lbl{display:flex;align-items:center;justify-content:center;gap:14px;font-size:16px;font-weight:700;letter-spacing:.14em;color:var(--brown);margin-bottom:20px}
 html body .dtl .topband{display:flex;align-items:center;justify-content:center;gap:12px;height:40px;background:#221914;color:#fff;font-size:12px;font-weight:600;letter-spacing:.14em}
 html body .dtl .topband i{width:1px;height:11px;background:rgba(255,255,255,.4)}
@@ -75,7 +76,7 @@ html body .dtl .opt .it span{display:block;font-size:12px;font-weight:400;color:
 
 /* 특징 행 (사진/글 번갈아) */
 html body .dtl .feats{border-top:1px solid var(--line)}
-html body .dtl .feat{display:grid;grid-template-columns:1fr 1fr;min-height:150px;border-bottom:1px solid var(--line);text-align:left}
+html body .dtl .feat{display:grid;grid-template-columns:auto 1fr;min-height:150px;border-bottom:1px solid var(--line);text-align:left}
 html body .dtl .feat .im{position:relative;overflow:hidden;background:linear-gradient(135deg,#E9E0D3 0%,var(--card) 100%);display:flex;align-items:center;justify-content:center;color:var(--brown)}
 html body .dtl .feat .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 html body .dtl .feat .tx{padding:22px 20px;display:flex;flex-direction:column;justify-content:center}
@@ -219,6 +220,28 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
 
 /* PC(가로 1024px 이상)에서는 1.3배로 크게 — 폭 430 → 559px */
 @media (min-width:1024px){ html body .dtl{zoom:1.3} }
+/* 폰(가로 600px 이하)에서는 아임웹 상세 영역의 좌우 여백을 넘어 화면 가로 100%로 */
+@media (max-width:600px){ html body .dtl{width:100vw;max-width:none;margin-left:calc(50% - 50vw);margin-right:0} }
+/* 아이폰 일반·프로(가로 420px 이하): 특징 칸 글자 조금 작게 */
+@media (max-width:420px){
+  html body .dtl .feat .tx{padding:20px 12px}
+  html body .dtl .feat .tx h3{font-size:15.5px}
+  html body .dtl .bar{font-size:10.5px}
+  html body .dtl .hash{gap:5px}
+  html body .dtl .hash span{padding:7px 9px;font-size:12.5px}
+}
+/* 좁은 폰(가로 400px 이하, 아이폰 SE·미니 375 / 안드로이드 360) */
+@media (max-width:400px){
+  html body .dtl .hero .lead b{white-space:nowrap}
+  html body .dtl .chips{gap:6px}
+  html body .dtl .chip{font-size:12.5px;padding:12px 4px;gap:5px;letter-spacing:-0.03em}
+  html body .dtl .seg span{padding:7px 9px;font-size:11.5px}
+  html body .dtl .t{font-size:28px}
+}
+@media (max-width:380px){
+  html body .dtl .hash{display:grid;grid-template-columns:1fr 1fr}
+  html body .dtl .feat .im.g{width:120px}
+}
 </style>
 <style>
 @keyframes dtlSpin{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
@@ -254,16 +277,16 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <div class="grp">
         <span class="tag">세트</span>
         <div class="card">
-          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><ellipse cx="32" cy="12" rx="26" ry="9" fill="#FAF8F5" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="21" ry="8" fill="#FAF8F5" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="13" ry="4.5" fill="#FAF8F5" stroke="#D8CEC5"/></svg></span><p>라운드 세트<span>원형 상판 + 공용 하판</span></p></div>
-          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><rect x="8" y="2" width="48" height="20" rx="6" fill="#FAF8F5" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="21" ry="8" fill="#FAF8F5" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="13" ry="4.5" fill="#FAF8F5" stroke="#D8CEC5"/></svg></span><p>스퀘어 세트<span>사각형 상판 + 공용 하판</span></p></div>
+          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><ellipse cx="32" cy="12" rx="26" ry="9" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="21" ry="8" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="13" ry="4.5" fill="#FFFFFF" stroke="#D8CEC5"/></svg></span><p>라운드 세트<span>원형 상판 + 공용 하판</span></p></div>
+          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><rect x="8" y="2" width="48" height="20" rx="6" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="21" ry="8" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="34" rx="13" ry="4.5" fill="#FFFFFF" stroke="#D8CEC5"/></svg></span><p>스퀘어 세트<span>사각형 상판 + 공용 하판</span></p></div>
         </div>
       </div>
       <div class="grp">
         <span class="tag">단품</span>
         <div class="card three">
-          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><circle cx="32" cy="22" r="16" fill="#FAF8F5" stroke="#D8CEC5"/></svg></span><p>원형 상판</p></div>
-          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><rect x="16" y="6" width="32" height="32" rx="8" fill="#FAF8F5" stroke="#D8CEC5"/></svg></span><p>사각형 상판</p></div>
-          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="58" height="40" aria-hidden="true"><ellipse cx="32" cy="22" rx="26" ry="16" fill="#FAF8F5" stroke="#D8CEC5"/><ellipse cx="32" cy="22" rx="17" ry="10" fill="#FAF8F5" stroke="#D8CEC5"/></svg></span><p>공용 하판</p></div>
+          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><circle cx="32" cy="22" r="16" fill="#FFFFFF" stroke="#D8CEC5"/></svg></span><p>원형 상판</p></div>
+          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="76" height="52" aria-hidden="true"><rect x="16" y="6" width="32" height="32" rx="8" fill="#FFFFFF" stroke="#D8CEC5"/></svg></span><p>사각형 상판</p></div>
+          <div class="it"><span class="vi"><svg viewBox="0 0 64 44" width="58" height="40" aria-hidden="true"><ellipse cx="32" cy="22" rx="26" ry="16" fill="#FFFFFF" stroke="#D8CEC5"/><ellipse cx="32" cy="22" rx="17" ry="10" fill="#FFFFFF" stroke="#D8CEC5"/></svg></span><p>공용 하판</p></div>
         </div>
       </div>
     </div>
@@ -280,11 +303,11 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <p class="en">Only what matters</p>
       <h3 class="t" style="font-size:25px;margin-bottom:28px">꼭 필요한<br><b>특장점만 담았습니다.</b></h3>
       <div class="feats">
-        <div class="feat"><div class="im"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 소재"></div><div class="tx"><em>Material</em><h3>국산 프리미엄<br><b>친환경 소재</b></h3><p>도마에도 사용되는 안전한 소재로, 아이가 있는 집에서도 안심.</p></div></div>
-        <div class="feat"><div class="im"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/2d46f66ae3e11.gif" alt="설치 모습"></div><div class="tx"><em>Easy Install</em><h3>공구 없이<br><b>1분 퀵 설치</b></h3><p>상판과 하판을 끼우기만 하면 바로 사용할 수 있습니다.</p></div></div>
+        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 소재"></div><div class="tx"><em>Material</em><h3>국산 프리미엄<br><b>친환경 소재</b></h3><p>도마에도 사용되는 안전한 소재로, 아이가 있는 집에서도&nbsp;안심.</p></div></div>
+        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/2d46f66ae3e11.gif" alt="설치 모습"></div><div class="tx"><em>Easy Install</em><h3>공구 없이<br><b>1분 퀵 설치</b></h3><p>상판과 하판을 끼우기만 하면 바로 사용할 수&nbsp;있습니다.</p></div></div>
         <div class="feat"><div class="im g"><svg viewBox="0 0 120 100" width="120" height="100" fill="none" stroke="currentColor"><circle cx="60" cy="50" r="34" stroke-opacity=".45" stroke-dasharray="3 4"/><circle cx="60" cy="50" r="38" stroke-width="1.4"/><text x="60" y="50" dominant-baseline="central" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor" stroke="none" font-family="Pretendard">24·27</text></svg></div><div class="tx"><em>Size</em><h3>24cm · 27cm<br><b>두 가지 사이즈</b></h3><p>기본형 24cm와 더 넓은 27cm 중 필요에 맞게 선택하세요.</p></div></div>
         <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div><div class="tx"><em>Lifetime A/S</em><h3>구매 후에도<br><b>평생 무상 A/S</b></h3><p>걱정 없이 오래 사용하세요.</p></div></div>
-        <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7 21l5-3 5 3-2-7.5"/></svg></div><div class="tx"><em>Patent</em><h3>고유한 회전 구조<br><b>특허 · 디자인특허 출원</b></h3><p>특허와 디자인특허를 출원한 제품입니다.</p></div></div>
+        <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7 21l5-3 5 3-2-7.5"/></svg></div><div class="tx"><em>Patent</em><h3>고유한 회전 구조<br><b>특허·디자인특허 출원</b></h3><p>특허와 디자인특허를 출원한 제품입니다.</p></div></div>
       </div>
       <p class="close">군더더기 없는 외형 안에,<br><b>부드러운 회전을 위한 정교한 구조</b>를 담았습니다.</p>
     </div>
@@ -332,7 +355,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
     <div class="bar"><span>POINT 1</span><span>DACU TurnPad 1-POINT BASIC</span></div>
     <p class="kick">MATERIAL</p>
     <h2 class="t">도마에도 쓰이는 소재를<br><b>그대로 사용했습니다.</b></h2>
-    <p class="d">도마에도 사용되는 친환경 프리미엄 소재로 만들었습니다.<br><b>유해물질 걱정 없이</b> 아이가 있는 집에서도<br>안심하고 사용할 수 있습니다.<br>원료부터 생산까지 국내에서 이루어집니다.</p>
+    <p class="d">도마에도 사용되는 친환경 프리미엄 소재로 만들었습니다.<br><b>유해물질 걱정 없이</b> 아이가 있는 집에서도<br>안심하고 사용할 수&nbsp;있습니다.<br>원료부터 생산까지 국내에서 이루어집니다.</p>
     <div class="card gap">
       <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 TurnPad 소재(UHMWPE)"></div>
       <div class="badge"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div>
@@ -372,7 +395,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <div class="dim"><svg viewBox="0 0 100 100" width="80" height="80"><circle cx="50" cy="56" r="30" fill="none" stroke="rgba(250,246,244,0.55)" stroke-width="1.3"/><circle cx="50" cy="56" r="25.6" fill="none" stroke="rgba(250,246,244,0.4)"/><line x1="50" y1="48" x2="50" y2="64" stroke="rgba(250,246,244,0.4)"/><line x1="42" y1="56" x2="58" y2="56" stroke="rgba(250,246,244,0.4)"/></svg><b>Ø162 / Ø138mm</b><span>하판 링</span></div>
       </div>
       <div class="sect"><i></i><b>5mm</b></div>
-      <p>조립 후 겉으로 보이는 단면은 상판의 얇은 5mm뿐입니다.<br>하판 링은 상판 내부에 완전히 숨겨집니다.</p>
+      <p>조립 후 겉으로 보이는 단면은<br>상판의 얇은 5mm뿐입니다.<br>하판 링은 상판 내부에 완전히 숨겨집니다.</p>
     </div>
 
     <div class="vline"></div>
@@ -390,7 +413,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
     <div class="bar"><span>POINT 3</span><span>DACU TurnPad 1-POINT BASIC</span></div>
     <p class="kick">EASY INSTALLATION</p>
     <h2 class="t">설치는 단 1분,<br><b>공구도 필요 없습니다.</b></h2>
-    <p class="d">상판과 하판을 끼우기만 하면 바로 사용할 수 있습니다.<br>복잡한 조립 과정 없이 <b>누구나 쉽게</b> 설치합니다.</p>
+    <p class="d">상판과 하판을 끼우기만 하면 바로 사용할 수&nbsp;있습니다.<br>복잡한 조립 과정 없이 <b>누구나 쉽게</b> 설치합니다.</p>
     <div class="card gap">
       <div class="photo"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/2d46f66ae3e11.gif" alt="하판을 놓고 상판을 덮는 설치 모습"></div>
       <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
@@ -400,14 +423,14 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
     <div class="vline"></div>
     <p class="kick">FREE ROTATION</p>
     <h2 class="t">모니터도, 소품도.<br><b>손끝으로 방향을 바꿉니다.</b></h2>
-    <p class="d">모니터 받침대로 가장 많이 쓰이지만<br>책상 위 다른 소품을 올려도 자유롭게 방향을 바꿀 수 있습니다.</p>
+    <p class="d">모니터 받침대로 가장 많이 쓰이지만<br>책상 위 다른 소품을 올려도<br>자유롭게 방향을 바꿀 수&nbsp;있습니다.</p>
     <div class="card gap rot">
       <div class="stage"><div class="scene" aria-hidden="true">
         <div class="ringb"></div><div class="plate"></div>
         <div class="mon"><span class="foot"></span><span class="neck"></span><span class="thick"></span><div class="scr"><div class="face"><span class="glass"></span></div></div></div>
       </div></div>
       <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3 6.2"/><path d="M4 17v-5h5"/></svg></div>
-      <div class="in" style="padding-top:22px"><p class="en" style="margin-top:0">360° Rotation</p><p class="d">하판 링은 책상에 고정된 채 움직이지 않고<br>원형 상판과 위에 놓인 오브제가 중심축을 기준으로<br><b>부드럽게 360도 회전</b>합니다.</p></div>
+      <div class="in" style="padding-top:22px"><p class="en" style="margin-top:0">360° Rotation</p><p class="d">하판 링은 책상에 고정된 채 움직이지 않고<br>원형 상판과 위에 놓인 오브제가<br>중심축을 기준으로<br><b>부드럽게 360도 회전</b>합니다.</p></div>
     </div>
   </section>
 
@@ -424,7 +447,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
           <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/c25f703744863.jpg" alt="주방 커피머신 받침대로 사용된 TurnPad"></div>
           <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V8z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3v2M11 3v2M14 3v2"/></svg></div>
           <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>커피머신 받침대로</b></h3>
-            <ul><li>설치가 간단해요</li><li>회전에 따라 주변 공간을 자유롭게 활용할 수 있어요</li><li>무거운 제품을 옮기지 않고도 회전만으로 뒤쪽 콘센트를 사용할 수 있어요</li></ul></div>
+            <ul><li>설치가 간단해요</li><li>회전에 따라 주변 공간을 자유롭게 활용할 수&nbsp;있어요</li><li>무거운 제품을 옮기지 않고도 회전만으로 뒤쪽 콘센트를 사용할 수&nbsp;있어요</li></ul></div>
         </div>
       </div>
       <div class="use">
@@ -432,7 +455,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <div class="card">
           <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026092839b9855474abf/fce090baf4fcd.png" alt="거실 빔프로젝터 받침대로 사용된 TurnPad"></div>
           <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="2"/><circle cx="8" cy="13" r="2.5"/><path d="M14 12h4M14 15h4"/></svg></div>
-          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>빔프로젝터 받침대로</b></h3><p class="d">벽이나 스크린 방향에 맞춰 손끝으로 돌리면 투사 방향을 바로 바꿀 수 있어요.</p></div>
+          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>빔프로젝터 받침대로</b></h3><p class="d">벽이나 스크린 방향에 맞춰 손끝으로 돌리면 투사 방향을 바로 바꿀 수&nbsp;있어요.</p></div>
         </div>
       </div>
       <div class="use">
@@ -440,7 +463,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <div class="card">
           <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/1e44e2083aa70.jpg" alt="올인원 PC 받침대로 사용된 TurnPad"></div>
           <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16v4"/></svg></div>
-          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>올인원 PC 받침대로</b></h3><p class="d">모니터와 본체가 하나로 된 올인원 PC도 안정적으로 받쳐 원하는 방향으로 자유롭게 돌려볼 수 있어요.</p></div>
+          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>올인원 PC 받침대로</b></h3><p class="d">모니터와 본체가 하나로 된 올인원 PC도 안정적으로 받쳐 원하는 방향으로 자유롭게 돌려볼 수&nbsp;있어요.</p></div>
         </div>
       </div>
       <div class="use">
@@ -448,7 +471,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <div class="card">
           <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/6e2557dc4d123.png" alt="전시 오브제 진열대로 사용된 TurnPad"></div>
           <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="13" rx="1"/><path d="M4 21h16M8 21v-5h8v5"/></svg></div>
-          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>전시 오브제 진열대로</b></h3><p class="d">갤러리나 쇼룸에서 작품과 소품을 옮기지 않고도 손끝으로 돌려가며 다양한 각도로 보여줄 수 있어요.</p></div>
+          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>전시 오브제 진열대로</b></h3><p class="d">갤러리나 쇼룸에서 작품과 소품을 옮기지 않고도 손끝으로 돌려가며 다양한 각도로 보여줄 수&nbsp;있어요.</p></div>
         </div>
       </div>
       <div class="use">
@@ -456,7 +479,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <div class="card">
           <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026092839b9855474abf/ad2e1ff743caf.png" alt="작업대 회전판으로 사용된 TurnPad"></div>
           <div class="badge"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg></div>
-          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>작업대 회전판으로</b></h3><p class="d">무거운 부품을 들었다 놓지 않고, 돌려 가며 사방을 살펴볼 수 있어요.</p></div>
+          <div class="in" style="padding-top:22px"><h3 class="t" style="font-size:24px"><b>작업대 회전판으로</b></h3><p class="d">무거운 부품을 들었다 놓지 않고,<br>돌려 가며 사방을 살펴볼 수&nbsp;있어요.</p></div>
         </div>
       </div>
       <p class="d" style="font-size:12.5px;margin-top:16px">* 실제 활용 사진입니다.</p>
@@ -483,7 +506,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 8v5"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg><span>올려둔 제품이 상판 중앙에 안정적으로 설치되었는지 확인해주세요.</span></li>
       <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 8v5"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg><span>무리한 힘으로 빠르게 회전시키지 마세요.</span></li>
       <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 8v5"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg><span>제품 위에서 물건을 이동하거나 설치할 때 넘어지지 않도록 주의해주세요.</span></li>
-      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 8v5"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg><span>사용 환경과 올려둔 제품의 받침 구조에 따라 사용감에 차이가 있을 수 있습니다.</span></li>
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M12 8v5"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg><span>사용 환경과 올려둔 제품의 받침 구조에 따라 사용감에 차이가 있을 수&nbsp;있습니다.</span></li>
     </ul>
   </section>
 
@@ -506,7 +529,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
     <div class="card legal">
       <div class="badge" style="margin-top:0"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div>
       <p class="lb">LEGAL NOTICE</p>
-      <p class="tx">턴패드는 특허청 등록상표로<br>상표법의 보호를 받고 있습니다.<br>상표와 콘텐츠의 무단 사용 및 도용은<br>관련 법에 따라 처벌될 수 있습니다.</p>
+      <p class="tx">턴패드는 특허청 등록상표로<br>상표법의 보호를 받고 있습니다.<br>상표와 콘텐츠의 무단 사용 및 도용은<br>관련 법에 따라 처벌될 수&nbsp;있습니다.</p>
       <p class="cp">Registered Trademark · Copyright DACU. All rights reserved.</p>
     </div>
 
@@ -514,16 +537,16 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
     <p class="kick">PRODUCT INFORMATION</p>
     <h2 class="t">TurnPad<br><b>Product Info</b></h2>
     <div class="card gap"><dl class="spec">
-      <div><dt>PRODUCT</dt><dd>DACU TURN PAD 1-POINT BASIC</dd></div>
+      <div><dt>PRODUCT</dt><dd>DACU TURN PAD<br>1-POINT BASIC</dd></div>
       <div><dt>STRUCTURE</dt><dd>2단 구조 · 상판 + 공용 하판<br>지지점 1개</dd></div>
       <div><dt>TOP PLATE</dt><dd>원형 Ø240mm / Ø270mm<br>스퀘어 240mm / 270mm</dd></div>
       <div><dt>BASE RING</dt><dd>공용 하판 Ø162 / Ø138mm<br>모든 상판 호환</dd></div>
       <div><dt>THICKNESS</dt><dd>상판 단면 5mm</dd></div>
       <div><dt>MATERIAL</dt><dd>UHMWPE</dd></div>
       <div><dt>COLOR</dt><dd>화이트 · 아이보리 · 모카</dd></div>
-      <div><dt>LINE-UP</dt><dd>세트 4종 · 상판 단품 4종 · 공용 하판</dd></div>
+      <div><dt>LINE-UP</dt><dd>세트 4종 · 상판 단품 4종 · 공용&nbsp;하판</dd></div>
       <div><dt>ROTATION</dt><dd>손으로 돌리는 360° 수동 회전</dd></div>
-      <div><dt>RECOMMEND</dt><dd>일반 모니터 등 단일 지지점 제품</dd></div>
+      <div><dt>RECOMMEND</dt><dd>일반 모니터 등 단일 지지점&nbsp;제품</dd></div>
       <div><dt>PATENT</dt><dd>특허출원 · 디자인특허출원</dd></div>
       <div><dt>A/S</dt><dd>평생 무상 A/S</dd></div>
     </dl></div>
@@ -536,10 +559,10 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <div class="card"><h3>배송안내</h3>
         <p>배송은 <strong>오전 12시까지 결제 완료</strong>, 확인된 건에 대해 당일 출고를 원칙으로 하고 있습니다. (공휴일 / 토,일요일은 다음 평일 출고)</p>
         <p>특이사항 및 변경사항은 무조건 <strong>고객센터로 연락</strong>주셔야 확인 및 수정, 변경 가능합니다.</p>
-        <p>업체 사정으로 인해 출고일이 변동될 수 있습니다.</p></div>
+        <p>업체 사정으로 인해 출고일이 변동될 수&nbsp;있습니다.</p></div>
       <div class="card"><h3>교환 및 반품</h3><ul>
         <li><strong>반드시 사전에 연락주세요.</strong></li>
-        <li>교환 및 반품은 <strong>제품 수령 후 7일 이내,</strong> 사용하지 않은 경우에 한하여 가능하며 배송받은 택배사를 이용해야 합니다.</li>
+        <li>교환 및 반품은 <strong>제품 수령 후 7일 이내,</strong> 사용하지 않은 경우에 한하여 가능하며 배송받은 택배사를 이용해야&nbsp;합니다.</li>
         <li><strong>고객의 단순 변심에 의한 교환 및 반품 시 왕복 배송료가</strong> 청구됩니다.</li>
         <li>파손, 불량, 주문내역과 상이한 상품이 배송된 경우 배송비 부담 없이 맞교환 가능합니다.</li>
         <li>도서지역 및 제주도는 추가 배송료가 부가됩니다.</li>
