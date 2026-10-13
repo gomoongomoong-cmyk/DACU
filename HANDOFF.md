@@ -39,7 +39,7 @@
 
 ### 2026-10-13 (6차): `detail-2point.html` 활용 섹션에 카드 2장 추가
 
-상태: 미리보기 확인 후 `main`에 합칠 예정 (합치면 이 줄을 PR 링크로 바꾼다)
+PR: https://github.com/gomoongomoong-cmyk/DACU/pull/5 (main에 합쳐짐)
 반영 상태: [ ] 컴퓨터 폴더에 반영함
 
 5차에서 추가한 USE CASES 섹션에 카드 2장을 더했다. 이제 카드는 5장이다.
