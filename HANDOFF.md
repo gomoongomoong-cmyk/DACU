@@ -39,7 +39,7 @@
 
 ### 2026-10-13 (7차): 베이직, 플러스의 USE CASES "실제 활용 사진" 문구 위치 변경
 
-상태: 미리보기 확인 후 `main`에 합칠 예정 (합치면 이 줄을 PR 링크로 바꾼다)
+PR: https://github.com/gomoongomoong-cmyk/DACU/pull/6 (main에 합쳐짐)
 반영 상태: [ ] 컴퓨터 폴더에 반영함 (`detail-1point-basic.html`, `detail-1point-plus.html` 둘 다)
 
 대상 파일: `detail-1point-basic.html`, `detail-1point-plus.html`. 두 파일 모두 같은 수정이다.
