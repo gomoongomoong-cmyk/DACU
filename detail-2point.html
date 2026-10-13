@@ -519,7 +519,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
   </section>
 
   <!-- USE CASES -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>USE CASES</span><span>DACU TurnPad 2-POINT</span></div>
     <p class="kick">REAL USE</p>
     <h2 class="t">대형 TV도 쉽게 돌려요.<br><b>실제 활용 모습이에요.</b></h2>
@@ -573,7 +573,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
   </section>
 
   <!-- ASSEMBLY + COMPONENTS -->
-  <section class="sec grad">
+  <section class="sec b2">
     <div class="bar"><span>POINT 3</span><span>DACU TurnPad 2-POINT</span></div>
     <p class="kick">ASSEMBLY</p>
     <h2 class="t">양쪽 두 지점으로<br><b>대형 TV를 더 안정적으로.</b></h2>
@@ -599,7 +599,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
   </section>
 
   <!-- TIPS + NOTE -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>HOW TO USE</span><span>DACU TurnPad 2-POINT</span></div>
     <p class="kick">USE TIPS</p>
     <h2 class="t">더 편리하게<br><b>사용하는 방법</b></h2>
@@ -623,7 +623,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
   </section>
 
   <!-- COLOR -->
-  <section class="sec grad">
+  <section class="sec b2">
     <div class="bar"><span>COLOR</span><span>DACU TurnPad 2-POINT</span></div>
     <p class="kick">BEYOND THE SCREEN</p>
     <h2 class="t">공간에 맞춰,<br><b>원하는 색상과 마감으로.</b></h2>
@@ -637,7 +637,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
   </section>
 
   <!-- INFO -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>INFORMATION</span><span>DACU TurnPad 2-POINT</span></div>
     <div class="card legal">
       <div class="badge" style="margin-top:0"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div>
@@ -693,10 +693,13 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
     box.setAttribute('data-on', '1');
     var plateL = box.querySelector('[data-tpd-plate="-1"]'), plateR = box.querySelector('[data-tpd-plate="1"]');
     var bar = box.querySelector('[data-tpd-bar]'), tv = box.querySelector('[data-tpd-tv]');
+    var gL = box.querySelector('[data-tpd-groove="-1"]'), gR = box.querySelector('[data-tpd-groove="1"]');
     if (!plateL || !plateR || !bar) return;
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static/.test(location.search);
-    var CX = 150, CY = 78, HALF = 126.5, MAX = 18, cur = 0, token = 0, timers = [];
-    function pinAt(t, s) { var th = MAX * t * Math.PI / 180, cy = CY; return { x: CX + s * HALF * Math.cos(th), y: cy + s * HALF * Math.sin(th) }; }
+    var CX = 150, CY = 78, HALF = 126.5, MAX = 18, DRIFT = 0, cur = 0, token = 0, timers = [];
+    function pinAt(t, s) { var th = MAX * t * Math.PI / 180, cy = CY + DRIFT * t * t; return { x: CX + s * HALF * Math.cos(th), y: cy + s * HALF * Math.sin(th) }; }
+    function groove(s) { var d = ''; for (var i = 0; i <= 28; i++) { var p = pinAt(-1 + 2 * i / 28, s); d += (i ? 'L' : 'M') + p.x.toFixed(2) + ',' + p.y.toFixed(2) + ' '; } return d; }
+    if (gL) gL.setAttribute('d', groove(-1)); if (gR) gR.setAttribute('d', groove(1));
     function setT(t) {
       t = Math.max(-1, Math.min(1, t)); cur = t;
       var a = MAX * t, l = pinAt(t, -1), r = pinAt(t, 1);
