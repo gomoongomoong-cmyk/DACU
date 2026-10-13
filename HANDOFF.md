@@ -17,8 +17,8 @@
 | 파일 | 변경 날짜 | 컴퓨터 반영 |
 |---|---|---|
 | `detail-2point.html` | 2026-10-13 (3차, 4차, 5차, 6차) | [ ] |
-| `detail-1point-plus.html` | 2026-10-13 (2차) | [ ] |
-| `detail-1point-basic.html` | 2026-10-13 (1차) | [ ] |
+| `detail-1point-plus.html` | 2026-10-13 (2차, 7차) | [ ] |
+| `detail-1point-basic.html` | 2026-10-13 (1차, 7차) | [ ] |
 
 가져온 파일은 컴퓨터 폴더의 같은 이름 파일과 비교한 뒤 반영한다. 컴퓨터에서만 고친 내용이 있으면 덮어쓰지 않는다.
 
@@ -36,6 +36,26 @@
 - 배송 마감은 "낮 12시"로 쓴다. "오전 12시"는 자정이라 틀린 표현이다.
 
 ## 변경 기록
+
+### 2026-10-13 (7차): 베이직, 플러스의 USE CASES "실제 활용 사진" 문구 위치 변경
+
+상태: 미리보기 확인 후 `main`에 합칠 예정 (합치면 이 줄을 PR 링크로 바꾼다)
+반영 상태: [ ] 컴퓨터 폴더에 반영함 (`detail-1point-basic.html`, `detail-1point-plus.html` 둘 다)
+
+대상 파일: `detail-1point-basic.html`, `detail-1point-plus.html`. 두 파일 모두 같은 수정이다.
+
+- 섹션 맨 아래에 한 번만 있던 `* 실제 활용 사진이에요.` 문구를 삭제했다.
+- 대신 **Kitchen 카드와 Desk 카드 아래**에만 같은 문구를 넣었다. (Living, Display, Workshop 카드에는 넣지 않음)
+- 넣은 위치: 해당 `.use` 블록 안, `.card`가 끝난 바로 뒤.
+- 이전 → 이후
+
+```html
+<!-- 이전: 섹션 맨 아래 1개 -->
+<p class="d" style="font-size:12.5px;margin-top:16px">* 실제 활용 사진이에요.</p>
+
+<!-- 이후: Kitchen 카드와 Desk 카드 각각 (</div> = .card 닫힘) 바로 뒤 -->
+<p class="d" style="font-size:12.5px;margin-top:14px">* 실제 활용 사진이에요.</p>
+```
 
 ### 2026-10-13 (6차): `detail-2point.html` 활용 섹션에 카드 2장 추가
 
