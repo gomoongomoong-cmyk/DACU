@@ -39,7 +39,7 @@
 
 ### 2026-10-13 (8차): 코드 리뷰 결과 중 5번, 7번, 10번 수정
 
-상태: 미리보기 확인 후 `main`에 합칠 예정 (합치면 이 줄을 PR 링크로 바꾼다)
+PR: https://github.com/gomoongomoong-cmyk/DACU/pull/7 (main에 합쳐짐)
 반영 상태: [ ] 컴퓨터 폴더에 반영함 (`detail-2point.html`, `detail-1point-basic.html`, `detail-1point-plus.html`)
 
 문구는 바뀌지 않았고 코드만 바뀌었다.
@@ -61,6 +61,8 @@
 - 삭제: `gL`/`gR`(`[data-tpd-groove]`를 찾는 줄), `groove()` 함수와 그걸 호출하는 줄, `DRIFT` 변수.
 - `pinAt()`의 `cy = CY + DRIFT * t * t`는 `cy = CY`로 바꿨다 (DRIFT는 항상 0이었다).
 - 확인: 수정 전후 모두 에러 0개, 화면에 들어온 뒤 판 위치가 같은 횟수로 변한다.
+
+**컴퓨터 Claude 주의**: 투포는 컴퓨터의 `tools` 폴더에 원본 소스(`detail-2point-body.html` 등)가 있는 것으로 보인다. 5번과 10번은 최종 파일뿐 아니라 원본 소스에도 같이 적용해야, 나중에 원본으로 페이지를 다시 만들 때 되살아나지 않는다.
 
 ### 2026-10-13 (7차): 베이직, 플러스의 USE CASES "실제 활용 사진" 문구 위치 변경
 
