@@ -39,7 +39,7 @@
 
 ### 2026-10-13 (5차): `detail-2point.html` 활용 섹션 추가
 
-상태: 미리보기 확인 후 `main`에 합칠 예정 (합치면 이 줄을 PR 링크로 바꾼다)
+PR: https://github.com/gomoongomoong-cmyk/DACU/pull/4 (main에 합쳐짐)
 반영 상태: [ ] 컴퓨터 폴더에 반영함
 
 호칭: 사용자는 2-POINT를 "투포", 1-POINT BASIC을 "베이직", 1-POINT PLUS를 "플러스"라고 부른다.
@@ -65,7 +65,7 @@
 
 ### 2026-10-13 (4차): `detail-2point.html` 이미지 교체 2곳
 
-상태: 미리보기 확인 후 `main`에 합칠 예정 (합치면 이 줄을 PR 링크로 바꾼다)
+PR: https://github.com/gomoongomoong-cmyk/DACU/pull/4 (main에 합쳐짐)
 반영 상태: [ ] 컴퓨터 폴더에 반영함
 
 사용자가 준 이미지 주소로 바꿨다. 문구는 건드리지 않았다. `<img>`의 `src`만 바뀌고 `alt`는 그대로다.
