@@ -87,19 +87,12 @@ html body .dtl .feat:nth-child(even) .im{order:2;background:linear-gradient(225d
 html body .dtl .endnote{padding:28px 24px 34px;font-size:14px;line-height:1.75;color:var(--sub)}
 html body .dtl .endnote b{color:var(--brown)}
 
-/* 한 번 제대로 */
-html body .dtl .life{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-html body .dtl .life .col{border-radius:8px;padding:30px 14px 28px;display:flex;flex-direction:column;align-items:center}
-html body .dtl .life .low{background:var(--card);box-shadow:var(--shadow)}
-html body .dtl .life .dacu{background:var(--brown);color:#fff;box-shadow:0 12px 28px rgba(74,54,40,.25)}
-html body .dtl .life .lb{font-size:13px;font-weight:700;margin-bottom:22px;color:var(--sub)}
-html body .dtl .life .dacu .lb{color:var(--sand)}
-html body .dtl .life .vis{height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-html body .dtl .life .xs{display:grid;grid-template-columns:repeat(3,30px);gap:6px;justify-content:center}
-html body .dtl .life .x{width:30px;height:30px;border-radius:50%;background:var(--opd-bg-soft);display:flex;align-items:center;justify-content:center;color:#8c7f74}
-html body .dtl .life .ok{width:72px;height:72px;border-radius:50%;background:var(--opd-white);color:var(--brown);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(250,248,245,.14)}
-html body .dtl .life .tx{font-size:15px;line-height:1.55;font-weight:300}
-html body .dtl .life .tx b{font-weight:700}
+/* 두루두루 오래 */
+html body .dtl .every{display:grid;grid-template-columns:1fr 1fr;padding:6px 18px 10px;text-align:left}
+html body .dtl .every>div{padding:20px 6px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:5px}
+html body .dtl .every>div:nth-last-child(-n+2){border-bottom:0}
+html body .dtl .every b{font-size:16px;font-weight:700;color:var(--brown)}
+html body .dtl .every span{font-size:13px;line-height:1.5;color:var(--sub)}
 
 /* 비교표 */
 html body .dtl .cmp{display:grid;grid-template-columns:80px 1fr 1fr;padding:6px 16px 10px}
@@ -263,20 +256,6 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
 <div class="dtl">
 <style>
 /* ---------- 2-POINT 전용 ---------- */
-/* 가치 비교 카드 */
-html body .dtl .vcs{display:grid;gap:12px;text-align:left}
-html body .dtl .vc{position:relative;padding:22px 20px 16px;overflow:visible}
-html body .dtl .vc.pick{background:var(--brown);color:#fff;box-shadow:0 12px 28px rgba(74,54,40,.25)}
-html body .dtl .vc .nm{font-size:17px;font-weight:700;margin-bottom:12px}
-html body .dtl .vc .rec{position:absolute;top:-10px;right:16px;padding:4px 9px;border-radius:3px;background:var(--sand);color:var(--brown);font-size:11px;font-weight:700;letter-spacing:.08em}
-html body .dtl .vc .rw{display:grid;grid-template-columns:84px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:13.5px;line-height:1.55}
-html body .dtl .vc.pick .rw{border-top-color:rgba(255,255,255,.18)}
-html body .dtl .vc .rw span{font-size:12.5px;font-weight:600;color:var(--sub)}
-html body .dtl .vc.pick .rw span{color:var(--sand)}
-html body .dtl .vc .rw p{color:var(--text)}
-html body .dtl .vc.pick .rw p{color:#fff;font-weight:600}
-html body .dtl .callout{margin-top:22px;padding:20px 18px;border-radius:8px;background:var(--card);font-size:15px;line-height:1.7;font-weight:600;box-shadow:var(--shadow)}
-html body .dtl .callout b{color:var(--brown)}
 /* 구조도 (원본) */
 html body .dtl .struct .tags2{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:22px}
 html body .dtl .struct .tags2 span{padding:6px 9px;border:1px solid rgba(255,255,255,.2);border-radius:3px;font-size:11px;font-weight:600;letter-spacing:.06em;color:rgba(250,246,244,.6)}
@@ -319,9 +298,9 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
       <h1>다리가 2개인<br><b>대형 TV를 위한 구조.</b></h1>
       <p class="lead">대형 TV도 원하는 방향으로.<br>슬라이딩 회전 받침대 <b>다큐 2-POINT 턴패드</b></p>
       <div class="chips">
-        <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>타공 없는 1분 설치</span>
+        <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>타공 없는 설치</span>
         <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>특허 · 디자인특허 출원</span>
-        <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>평생 무상 A/S</span>
+        <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>5초 퀵 설치</span>
         <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>국산 친환경 소재</span>
       </div>
     </div>
@@ -386,10 +365,10 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
       <p class="en">Only what matters</p>
       <h3 class="t" style="font-size:25px;margin-bottom:28px">꼭 필요한<br><b>특장점만 담았어요.</b></h3>
       <div class="feats">
-        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 소재"></div><div class="tx"><em>Material</em><h3>국산 프리미엄<br><b>친환경 소재</b></h3><p>도마에도 사용되는 안전한 소재로 만들어, 마음 놓고 사용할 수&nbsp;있어요.</p></div></div>
-        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/2420796b8b590.gif" alt="TV 다리 아래에 패드를 놓는 모습"></div><div class="tx"><em>No Drilling</em><h3>타공 없는<br><b>1분 설치</b></h3><p>TV나 벽에 구멍을 뚫을 필요 없이, 다리 아래에 끼우기만 하면 바로 사용할 수&nbsp;있어요.</p></div></div>
+        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마로도 쓸 수 있는 소재"></div><div class="tx"><em>Material</em><h3>국산 프리미엄<br><b>친환경 소재</b></h3><p>도마로도 쓸 수 있는 안전한 소재로 만들어, 마음 놓고 사용할 수&nbsp;있어요.</p></div></div>
+        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/2420796b8b590.gif" alt="TV 다리 아래에 패드를 놓는 모습"></div><div class="tx"><em>No Drilling</em><h3>타공 없는<br><b>5초 퀵 설치</b></h3><p>TV나 벽에 구멍을 뚫을 필요 없이, 다리 아래에 끼우기만 하면 바로 사용할 수&nbsp;있어요.</p></div></div>
         <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="58" height="58" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="14" height="2.6" rx="1"/><path d="M11 9.6v2.6h2V9.6"/><rect x="2.5" y="12.4" width="19" height="2.6" rx="1"/><path d="M10 13.4h4" stroke-width="1.6"/></svg></div><div class="tx"><em>Simple</em><h3>단순하고<br><b>안전한 구조</b></h3><p>오일과 볼베어링 없이 필요한 구조만 남겼어요.</p></div></div>
-        <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div><div class="tx"><em>Lifetime A/S</em><h3>구매 후에도<br><b>평생 무상 A/S</b></h3><p>걱정 없이 오래 사용하세요.</p></div></div>
+        <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v8H3z"/><path d="M12 9v8M6 17v2.5M18 17v2.5"/></svg></div><div class="tx"><em>Furniture</em><h3>쓰던 거실장<br><b>그대로</b></h3><p>지금 쓰는 거실장 위에서 화면의 각도만 바꿔요.</p></div></div>
         <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7 21l5-3 5 3-2-7.5"/></svg></div><div class="tx"><em>Patent</em><h3>고유한 슬라이딩 구조<br><b>특허·디자인특허 출원</b></h3><p>특허와 디자인특허를 출원한 제품이에요.</p></div></div>
       </div>
       <p class="endnote">타공도, 스탠드도 없이<br><b>대형 TV의 각도를 바꾸다.</b></p>
@@ -409,37 +388,28 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
     </ul>
   </section>
 
-  <!-- VALUE COMPARISON -->
+  <!-- EVERYDAY -->
   <section class="sec b2">
-    <div class="bar"><span>VALUE COMPARISON</span><span>DACU TurnPad 2-POINT</span></div>
-    <p class="kick">WHY 2-POINT</p>
-    <h2 class="t">더 이상 돈을 버리는<br><b>리스크에 투자하지 마세요.</b></h2>
-    <p class="d">벽을 뚫거나, 멀쩡한 거실장을 버리거나.<br>TV 방향 하나에 치르기엔 큰 비용이에요.</p>
-    <div class="vcs gap">
-      <div class="card vc"><p class="nm">벽면 타공 시공</p>
-        <div class="rw"><span>예상 비용</span><p>설치비 15만 + 복구비 40만<br>총 55만원 상당</p></div>
-        <div class="rw"><span>공간 · 인테리어</span><p>벽면에 흉한 구멍 손상</p></div>
-        <div class="rw"><span>안정성</span><p>단단하나 추후 이동 불가</p></div></div>
-      <div class="card vc"><p class="nm">바퀴형 무빙 스탠드</p>
-        <div class="rw"><span>예상 비용</span><p>스탠드 구입비 10~20만 + 거실장 처분<br>총 20만원 상당</p></div>
-        <div class="rw"><span>공간 · 인테리어</span><p>거실 공간 차지, 지저분한 선 노출</p></div>
-        <div class="rw"><span>안정성</span><p>대형 TV 이동 시 전도 위험</p></div></div>
-      <div class="card vc pick"><span class="rec">RECOMMENDED</span><p class="nm">2-POINT 턴패드</p>
-        <div class="rw"><span>예상 비용</span><p>2-POINT 세트 한 번 구매</p></div>
-        <div class="rw"><span>공간 · 인테리어</span><p>기존 거실장 그대로 유지</p></div>
-        <div class="rw"><span>안정성</span><p>면 접촉 구조로 흔들림 없이 고정</p></div></div>
-    </div>
-    <p class="callout">단 한 번의 선택으로<br><b>거실 인테리어, TV의 안전, 공간의 자유</b>를<br>모두 지키세요.<span style="display:block;margin-top:10px;font-size:13.5px;font-weight:500;color:var(--sub)">벽에 흔적을 남기지 않고, 이사할 때는 그대로 가져가세요.</span></p>
+    <div class="bar"><span>EVERYDAY</span><span>DACU TurnPad 2-POINT</span></div>
+    <p class="kick">ONE FOR EVERYWHERE</p>
+    <h2 class="t">누구나 하나쯤,<br><b>두루두루 오래.</b></h2>
+    <p class="d">거실 TV부터 회의실, 행사장까지.<br>공간이 바뀌어도 옮겨 가며 <b>오래 두고</b> 쓰세요.<br>단순한 구조라 고장 날 일이 없어요.</p>
+    <div class="card gap"><div class="every">
+      <div><b>거실</b><span>TV, 사운드바 옆 디스플레이</span></div>
+      <div><b>회의실</b><span>회의실 TV</span></div>
+      <div><b>행사장</b><span>디스플레이</span></div>
+      <div><b>운동 · 교육 공간</b><span>TV, 모니터</span></div>
+    </div></div>
   </section>
 
   <!-- MATERIAL -->
   <section class="sec grad">
     <div class="bar"><span>POINT 1</span><span>DACU TurnPad 2-POINT</span></div>
     <p class="kick">MATERIAL</p>
-    <h2 class="t">도마에도 쓰이는 소재를<br><b>그대로 사용했어요.</b></h2>
-    <p class="d">도마에도 쓰이는 친환경 프리미엄 소재로<br><b>원료부터 생산까지 국내</b>에서 이루어져요.</p>
+    <h2 class="t">도마로도 쓸 수 있는<br><b>소재예요.</b></h2>
+    <p class="d">도마로도 쓸 수 있는 친환경 프리미엄 소재로<br><b>원료부터 생산까지 국내</b>에서 이루어져요.</p>
     <div class="card gap">
-      <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 TurnPad 소재"></div>
+      <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마로도 쓸 수 있는 TurnPad 소재"></div>
       <div class="badge"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div>
       <div class="in" style="padding-top:22px">
         <p class="en" style="margin-top:0">Cutting board grade</p>
@@ -634,6 +604,11 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
       <div class="card colc"><p class="e">03 / LEATHER</p><h3>모카</h3><p>우드·브라운 계열 공간에 깊이를 더하는 톤</p><div class="disc" style="background:#8A6E52"></div></div>
     </div>
     <p class="foot">* 아이보리·모카는 PTFE 상판 위에 인조가죽 마감을 붙인 옵션입니다. 하판은 화이트 계열로 유지됩니다.</p>
+
+    <div class="vline"></div>
+    <p class="kick">CUSTOM SIZE</p>
+    <h2 class="t">원하는 사이즈로,<br><b>주문 제작도 가능해요.</b></h2>
+    <p class="d">쓰는 곳과 용도에 맞춰<br>사이즈별로 주문 제작할 수 있어요.</p>
   </section>
 
   <!-- INFO -->
@@ -662,7 +637,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
       <div><dt>ROTATION</dt><dd>손으로 돌리는 슬라이딩 회전</dd></div>
       <div><dt>RECOMMEND</dt><dd>다리가 좌우로 분리된 대형&nbsp;TV</dd></div>
       <div><dt>PATENT</dt><dd>특허출원 · 디자인특허출원</dd></div>
-      <div><dt>A/S</dt><dd>평생 무상 A/S</dd></div>
+      <div><dt>A/S</dt><dd>무상 A/S</dd></div>
     </dl></div>
 
     <div class="vline"></div>
@@ -681,7 +656,7 @@ html body .dtl .foot{margin-top:14px;font-size:12.5px;color:var(--sub)}
         <li>파손, 불량, 주문내역과 상이한 상품이 배송된 경우 배송비 부담 없이 맞교환 가능합니다.</li>
         <li>도서지역 및 제주도는 추가 배송료가 부가됩니다.</li>
         <li>수취인 부재 및 잘못된 연락처 기재로 인한 추가 경비 발생 시 고객이 부담합니다.</li></ul></div>
-      <div class="card"><h3>A/S 안내</h3><p>평생 무상 A/S를 제공합니다. 파손 및 불량 발견 시 스마트스토어 문의를 통해 접수해주세요.</p></div>
+      <div class="card"><h3>A/S 안내</h3><p>무상 A/S가 가능합니다. 파손 및 불량 발견 시 스마트스토어 문의를 통해 접수해주세요.</p></div>
     </div>
   </section>
 

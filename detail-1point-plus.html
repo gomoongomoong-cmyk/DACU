@@ -87,19 +87,12 @@ html body .dtl .feat:nth-child(even) .im{order:2;background:linear-gradient(225d
 html body .dtl .endnote{padding:28px 24px 34px;font-size:14px;line-height:1.75;color:var(--sub)}
 html body .dtl .endnote b{color:var(--brown)}
 
-/* 한 번 제대로 */
-html body .dtl .life{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-html body .dtl .life .col{border-radius:8px;padding:30px 14px 28px;display:flex;flex-direction:column;align-items:center}
-html body .dtl .life .low{background:var(--card);box-shadow:var(--shadow)}
-html body .dtl .life .dacu{background:var(--brown);color:#fff;box-shadow:0 12px 28px rgba(74,54,40,.25)}
-html body .dtl .life .lb{font-size:13px;font-weight:700;margin-bottom:22px;color:var(--sub)}
-html body .dtl .life .dacu .lb{color:var(--sand)}
-html body .dtl .life .vis{height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-html body .dtl .life .xs{display:grid;grid-template-columns:repeat(3,30px);gap:6px;justify-content:center}
-html body .dtl .life .x{width:30px;height:30px;border-radius:50%;background:var(--opd-bg-soft);display:flex;align-items:center;justify-content:center;color:#8c7f74}
-html body .dtl .life .ok{width:72px;height:72px;border-radius:50%;background:var(--opd-white);color:var(--brown);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(250,248,245,.14)}
-html body .dtl .life .tx{font-size:15px;line-height:1.55;font-weight:300}
-html body .dtl .life .tx b{font-weight:700}
+/* 두루두루 오래 */
+html body .dtl .every{display:grid;grid-template-columns:1fr 1fr;padding:6px 18px 10px;text-align:left}
+html body .dtl .every>div{padding:20px 6px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:5px}
+html body .dtl .every>div:nth-last-child(-n+2){border-bottom:0}
+html body .dtl .every b{font-size:16px;font-weight:700;color:var(--brown)}
+html body .dtl .every span{font-size:13px;line-height:1.5;color:var(--sub)}
 
 /* 비교표 */
 html body .dtl .cmp{display:grid;grid-template-columns:80px 1fr 1fr;padding:6px 16px 10px}
@@ -287,7 +280,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <div class="chips">
         <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>Ø230mm 넓은 상판</span>
         <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>특허 · 디자인특허 출원</span>
-        <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>평생 무상 A/S</span>
+        <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>5초 퀵 설치</span>
         <span class="chip"><i class="ck"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></i>국산 친환경 소재</span>
       </div>
     </div>
@@ -346,61 +339,38 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <p class="en">Only what matters</p>
       <h3 class="t" style="font-size:25px;margin-bottom:28px">꼭 필요한<br><b>특장점만 담았어요.</b></h3>
       <div class="feats">
-        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 소재"></div><div class="tx"><em>Material</em><h3>국산 프리미엄<br><b>친환경 소재</b></h3><p>도마에도 사용되는 안전한 소재로, 아이가 있는 집에서도&nbsp;안심.</p></div></div>
-        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026092839b9855474abf/bf4c124207888.jpg" alt="3단 구조 설치 모습"></div><div class="tx"><em>Easy Install</em><h3>공구 없이<br><b>1분 퀵 설치</b></h3><p>하판 위에 중앙판을 올리고 상판으로 덮기만 하면 바로 사용할 수&nbsp;있어요.</p></div></div>
+        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마로도 쓸 수 있는 소재"></div><div class="tx"><em>Material</em><h3>국산 프리미엄<br><b>친환경 소재</b></h3><p>도마로도 쓸 수 있는 안전한 소재로, 아이가 있는 집에서도&nbsp;안심.</p></div></div>
+        <div class="feat"><div class="im g"><img src="https://cdn.imweb.me/upload/S2026092839b9855474abf/bf4c124207888.jpg" alt="3단 구조 설치 모습"></div><div class="tx"><em>Easy Install</em><h3>공구 없이<br><b>5초 퀵 설치</b></h3><p>하판 위에 중앙판을 올리고 상판으로 덮기만 하면 바로 사용할 수&nbsp;있어요.</p></div></div>
         <div class="feat"><div class="im g"><svg viewBox="0 0 120 100" width="120" height="100" fill="none" stroke="currentColor"><circle cx="60" cy="50" r="34" stroke-opacity=".45" stroke-dasharray="3 4"/><circle cx="60" cy="50" r="38" stroke-width="1.4"/><text x="60" y="50" dominant-baseline="central" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor" stroke="none" font-family="Pretendard">23cm</text></svg></div><div class="tx"><em>Size</em><h3>타사 대비<br><b>넓은 23cm</b></h3><p>더 넓은 상판이 모니터를 비롯한 다양한 소품을 안정적으로 받쳐줘요.</p></div></div>
-        <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div><div class="tx"><em>Lifetime A/S</em><h3>구매 후에도<br><b>평생 무상 A/S</b></h3><p>걱정 없이 오래 사용하세요.</p></div></div>
+        <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div><div class="tx"><em>Simple Structure</em><h3>베어링 없는<br><b>단순한 구조</b></h3><p>단순한 구조라 고장 날 일이 없어요.</p></div></div>
         <div class="feat"><div class="im g"><svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7 21l5-3 5 3-2-7.5"/></svg></div><div class="tx"><em>Patent</em><h3>고유한 회전 구조<br><b>특허·디자인특허 출원</b></h3><p>특허와 디자인특허를 출원한 제품이에요.</p></div></div>
       </div>
       <p class="endnote">겉은 심플하게, 안은 정교하게.<br><b>부드러운 회전을 위한 정교한 구조</b>를 담았어요.</p>
     </div>
   </section>
 
-  <!-- WHY PREMIUM -->
+  <!-- EVERYDAY -->
   <section class="sec grad">
-    <div class="bar"><span>WHY PREMIUM</span><span>DACU TurnPad 1-POINT PLUS</span></div>
-    <h2 class="t">여러 번 사느니,<br><b>한 번 제대로.</b></h2>
-    <p class="d">저가형은 마모될 때마다 다시 사야 하지만<br><b>TurnPad는 한 번이면 평생</b> 가요.</p>
-    <div class="life gap">
-      <div class="col low">
-        <p class="lb">저가형 제품</p>
-        <div class="vis"><div class="xs">
-          <span class="x"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg></span><span class="x"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg></span><span class="x"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg></span><span class="x"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg></span><span class="x"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg></span><span class="x"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg></span>
-        </div></div>
-        <p class="tx">마모·변형될 때마다<br><b>다시 구매해야 해요</b></p>
-      </div>
-      <div class="col dacu">
-        <p class="lb">DACU TurnPad</p>
-        <div class="vis"><span class="ok"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg></span></div>
-        <p class="tx">한 번 사면,<br><b>그걸로 끝이에요</b></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARE -->
-  <section class="sec b2">
-    <div class="bar"><span>COMPARE</span><span>DACU TurnPad 1-POINT PLUS</span></div>
-    <p class="kick">LOW-COST VS DACU</p>
-    <h2 class="t">디테일이,<br><b>전부 달라요.</b></h2>
-    <p class="d">같은 항목을 나란히 놓고 비교해보세요.</p>
-    <div class="card gap"><div class="cmp">
-      <div class="hd"></div><div class="hd l">저가형 제품</div><div class="hd p">턴패드</div>
-      <div class="k">내구성</div><div class="l">쉽게 마모·변형</div><div class="p">반영구적</div>
-      <div class="k">부품 구조</div><div class="l">많고 헐거워짐</div><div class="p">단 3개, 심플</div>
-      <div class="k">소재 안전성</div><div class="l">확인 어려움</div><div class="p">국산 친환경</div>
-      <div class="k">무게·휴대성</div><div class="l">무겁고 부피 큼</div><div class="p">가볍고 슬림</div>
-      <div class="k last">활용도</div><div class="l last">한 가지 용도</div><div class="p last">모니터부터<br>소품까지</div>
+    <div class="bar"><span>EVERYDAY</span><span>DACU TurnPad 1-POINT PLUS</span></div>
+    <p class="kick">ONE FOR EVERYWHERE</p>
+    <h2 class="t">누구나 하나쯤,<br><b>두루두루 오래.</b></h2>
+    <p class="d">책상 위 모니터부터 주방의 커피머신까지.<br>필요한 곳으로 옮겨 가며 <b>오래 두고</b> 쓰세요.<br>단순한 구조라 고장 날 일이 없어요.</p>
+    <div class="card gap"><div class="every">
+      <div><b>책상</b><span>모니터, 올인원 PC</span></div>
+      <div><b>거실</b><span>빔프로젝터, 소품</span></div>
+      <div><b>주방</b><span>커피머신</span></div>
+      <div><b>작업실 · 매장</b><span>작업대, 전시 오브제</span></div>
     </div></div>
   </section>
 
   <!-- MATERIAL -->
-  <section class="sec grad">
+  <section class="sec b2">
     <div class="bar"><span>POINT 1</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">MATERIAL</p>
-    <h2 class="t">도마에도 쓰이는 소재를<br><b>그대로 사용했어요.</b></h2>
-    <p class="d">도마에도 사용되는 친환경 프리미엄 소재로 만들었어요.<br><b>유해물질 걱정 없이</b> 아이가 있는 집에서도<br>안심하고 사용할 수&nbsp;있어요.<br>원료부터 생산까지 국내에서 이루어져요.</p>
+    <h2 class="t">도마로도 쓸 수 있는<br><b>소재예요.</b></h2>
+    <p class="d">도마로도 쓸 수 있는 친환경 프리미엄 소재로 만들었어요.<br><b>유해물질 걱정 없이</b> 아이가 있는 집에서도<br>안심하고 사용할 수&nbsp;있어요.<br>원료부터 생산까지 국내에서 이루어져요.</p>
     <div class="card gap">
-      <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마에도 사용되는 TurnPad 소재(UHMWPE)"></div>
+      <div class="photo r43"><img src="https://cdn.imweb.me/upload/S2026072008511b2c96a2e/dba013498f8a2.png" alt="도마로도 쓸 수 있는 TurnPad 소재(UHMWPE)"></div>
       <div class="badge"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div>
       <div class="in" style="padding-top:22px">
         <p class="en" style="margin-top:0">Cutting board grade</p>
@@ -418,7 +388,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
   </section>
 
   <!-- STRUCTURE + SIZE -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>POINT 2</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">STRUCTURE</p>
     <h2 class="t">위아래를 감싸 안정적으로,<br><b>회전은 가운데 원판으로.</b></h2>
@@ -453,10 +423,15 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <div class="it"><div class="c c27"><span class="v">23cm</span></div><b>TurnPad PLUS</b><span>Ø 230mm</span></div>
       <div class="it"><div class="c c24"><span class="v">20cm</span></div><b>일반형</b><span>&nbsp;</span></div>
     </div></div>
+
+    <div class="vline"></div>
+    <p class="kick">CUSTOM SIZE</p>
+    <h2 class="t">원하는 사이즈로,<br><b>주문 제작도 가능해요.</b></h2>
+    <p class="d">쓰는 곳과 용도에 맞춰<br>사이즈별로 주문 제작할 수&nbsp;있어요.</p>
   </section>
 
   <!-- ROTATION FEEL -->
-  <section class="sec grad">
+  <section class="sec b2">
     <div class="bar"><span>POINT 3</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">ROTATION FEEL</p>
     <h2 class="t">회전감까지,<br><b>소재로 고르세요.</b></h2>
@@ -470,10 +445,10 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
   </section>
 
   <!-- INSTALL + ROTATION -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>POINT 4</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">EASY INSTALLATION</p>
-    <h2 class="t">설치는 단 1분,<br><b>공구도 필요 없어요.</b></h2>
+    <h2 class="t">설치는 단 5초,<br><b>공구도 필요 없어요.</b></h2>
     <p class="d">하판 위에 중앙판을 올리고 상판으로 덮기만 하면<br>바로 사용할 수&nbsp;있어요.<br>복잡한 조립 과정 없이 <b>누구나 쉽게</b> 설치해요.</p>
     <div class="card gap">
       <!-- 설치 사진은 PLUS용 사진이 생기면 교체 -->
@@ -497,7 +472,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
   </section>
 
   <!-- USE CASES -->
-  <section class="sec grad">
+  <section class="sec b2">
     <div class="bar"><span>USE CASES</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">BEYOND THE MONITOR</p>
     <h2 class="t">모니터 받침대만은 아니에요.<br><b>일상 어디서든 자유롭게.</b></h2>
@@ -550,7 +525,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
   </section>
 
   <!-- TIPS + NOTE -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>HOW TO USE</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">USE TIPS</p>
     <h2 class="t">더 편리하게<br><b>사용하는 방법</b></h2>
@@ -574,7 +549,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
   </section>
 
   <!-- COLOR -->
-  <section class="sec grad">
+  <section class="sec b2">
     <div class="bar"><span>COLOR</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <p class="kick">BEYOND THE SCREEN</p>
     <h2 class="t">공간에 맞춰,<br><b>원하는 색상과 마감으로.</b></h2>
@@ -587,7 +562,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
   </section>
 
   <!-- INFO -->
-  <section class="sec b2">
+  <section class="sec grad">
     <div class="bar"><span>INFORMATION</span><span>DACU TurnPad 1-POINT PLUS</span></div>
     <div class="card legal">
       <div class="badge" style="margin-top:0"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"/><path d="M9 12.5l2 2 4-4.5"/></svg></div>
@@ -610,7 +585,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
       <div><dt>ROTATION</dt><dd>손으로 돌리는 360° 수동 회전</dd></div>
       <div><dt>RECOMMEND</dt><dd>BASIC보다 안정감이 필요한&nbsp;제품</dd></div>
       <div><dt>PATENT</dt><dd>특허출원 · 디자인특허출원</dd></div>
-      <div><dt>A/S</dt><dd>평생 무상 A/S</dd></div>
+      <div><dt>A/S</dt><dd>무상 A/S</dd></div>
     </dl></div>
 
     <div class="vline"></div>
@@ -629,7 +604,7 @@ html body .dtl.is-static *{animation:none!important;transition:none!important}
         <li>파손, 불량, 주문내역과 상이한 상품이 배송된 경우 배송비 부담 없이 맞교환 가능합니다.</li>
         <li>도서지역 및 제주도는 추가 배송료가 부가됩니다.</li>
         <li>수취인 부재 및 잘못된 연락처 기재로 인한 추가 경비 발생 시 고객이 부담합니다.</li></ul></div>
-      <div class="card"><h3>A/S 안내</h3><p>평생 무상 A/S를 제공합니다. 파손 및 불량 발견 시 스마트스토어 문의를 통해 접수해주세요.</p></div>
+      <div class="card"><h3>A/S 안내</h3><p>무상 A/S가 가능합니다. 파손 및 불량 발견 시 스마트스토어 문의를 통해 접수해주세요.</p></div>
     </div>
   </section>
 
